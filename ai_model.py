@@ -10,7 +10,7 @@ def train_delay_model(df):
         X, y, test_size=0.2, random_state=42
     )
 
-    model = RandomForestRegressor()
+    model = RandomForestRegressor(n_estimators=50, random_state=42)
     model.fit(X_train, y_train)
 
     predictions = model.predict(X_test)
