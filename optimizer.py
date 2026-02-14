@@ -1,8 +1,8 @@
 def optimize_schedule(df):
-    # Priority trains first
-    df = df.sort_values(
+    # Priority trains first, then by arrival time
+    optimized_df = df.sort_values(
         by=["priority", "arrival_time"],
         ascending=[False, True]
     ).copy()
 
-    return df
+    return optimized_df
